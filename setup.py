@@ -23,6 +23,5 @@ setup(
         "Programming Language :: Python :: 3.8"
     ],
     packages=["matplot-fmt-pi"],
-    include_package_data=True,
     install_requires=["numpy", "matplotlib"]
 )
