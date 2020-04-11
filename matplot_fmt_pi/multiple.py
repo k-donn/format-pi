@@ -1,5 +1,6 @@
 """
-has MultiplePi class
+The multiple module defines the MultiplePi class.
+
 """
 import math
 from typing import Any, Callable
@@ -12,6 +13,10 @@ class MultiplePi:
     r"""
     Handle formatting of numbers as multiples of pi.
 
+
+    An instance can be constructed, then, the methods can be called and passed to
+    the matplotlib formatting and locating methods.
+
     Attributes
     ----------
     denominator : `int`
@@ -21,7 +26,30 @@ class MultiplePi:
         Number to find multiples of, by default math.pi
 
     symbol : `str`, optional
-        Symbol to place in string of multiple, by default r"\pi
+        Symbol to place in string of multiple, by default r"\pi"
+
+    Methods
+    -------
+    locator()
+        Return the locator instance
+
+    formatter()
+        Return the formatter instance
+
+
+    Example
+    -------
+    >>> pi_controller = MultiplePi(3) # For pi/3 and multiples of
+    >>> axes_instance.set_major_formatter(pi_controller.formatter()) # Turn values into the fraction
+    >>> axes_instance.set_major_locator(pi_controller.locator()) # Will put ticks at multiples of pi/3
+
+    Notes
+    -----
+    The symbol is rendered inside a latex equation by matplotlib. Non-latex characters
+    can also be used.
+
+    Set symbol to a different value when base is a different value. (tau possibly)
+
 
     """
 
