@@ -88,15 +88,15 @@ class MultiplePi:
         `Callable[[float, Any], str]`
             Accpes a value and a position parameter and transforms them
         """
-        def _fmt(theta, _) -> str:
+        def _fmt(theta, _pos=1) -> str:
             """Transform the passed value into the proper representation of the multiple.
 
             Parameters
             ----------
             theta : `float`
                 The angle in radians to be transformed
-            _ : `int`
-                Index of the tick on the axis
+            _pos : `int`, optional
+                Index of the tick on the axis, by default 1
 
             Returns
             -------
