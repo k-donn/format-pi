@@ -1,14 +1,14 @@
 import pathlib
 from setuptools import setup
 
-# The directory containing this file
+# The dir containing this file
 HERE = pathlib.Path(__file__).parent
 
 README = (HERE / "README.md").read_text()
 
 setup(
     name="matplot-fmt-pi",
-    version="1.3.3",
+    version="1.3.4",
     description="Format numbers as multiples of Pi",
     long_description=README,
     long_description_content_type="text/markdown",
