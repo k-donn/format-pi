@@ -1,6 +1,4 @@
 """
-matplot_fmt_pi
-
 Format numbers as multiples of pi for matplotlib plots.
 
 The class MultiplePi contains the math and formatting to accomplish this.

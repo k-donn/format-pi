@@ -1,7 +1,4 @@
-"""
-The multiple module defines the MultiplePi class.
-
-"""
+"""The multiple module defines the MultiplePi class."""
 import math
 from typing import Any, Callable
 
@@ -12,7 +9,6 @@ from matplotlib.ticker import FuncFormatter, MultipleLocator
 class MultiplePi:
     r"""
     Handle formatting of numbers as multiples of pi.
-
 
     An instance can be constructed, then, the methods can be called and passed to
     the matplotlib formatting and locating methods.
