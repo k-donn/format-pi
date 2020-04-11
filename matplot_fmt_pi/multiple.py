@@ -157,11 +157,6 @@ class MultiplePi:
         -------
         `float`
             The largest positive integer that divides each of the integers
-
-        Raises
-        ------
-        `ValueError`
-            The greatest common divisor can only be of positive numbers
         """
         while int_2:
             int_1, int_2 = int_2, int_1 % int_2
