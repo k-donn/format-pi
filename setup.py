@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="matplot-fmt-pi",
-    version="1.3.0",
+    version="1.3.1",
     description="Format numbers as multiples of Pi",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -21,6 +21,11 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8"
+    ],
+    keywords=[
+        "matplotlib",
+        "pi",
+        "formatting"
     ],
     packages=["matplot_fmt_pi"],
     install_requires=["numpy", "matplotlib"]
