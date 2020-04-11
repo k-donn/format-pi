@@ -1,7 +1,4 @@
-"""
-The multiple module defines the MultiplePi class.
-
-"""
+"""The multiple module defines the MultiplePi class."""
 import math
 from typing import Any, Callable
 
@@ -12,7 +9,6 @@ from matplotlib.ticker import FuncFormatter, MultipleLocator
 class MultiplePi:
     r"""
     Handle formatting of numbers as multiples of pi.
-
 
     An instance can be constructed, then, the methods can be called and passed to
     the matplotlib formatting and locating methods.
@@ -88,15 +84,15 @@ class MultiplePi:
         `Callable[[float, Any], str]`
             Accpes a value and a position parameter and transforms them
         """
-        def _fmt(theta, _) -> str:
+        def _fmt(theta, _pos=1) -> str:
             """Transform the passed value into the proper representation of the multiple.
 
             Parameters
             ----------
             theta : `float`
                 The angle in radians to be transformed
-            _ : `int`
-                Index of the tick on the axis
+            _pos : `int`, optional
+                Index of the tick on the axis, by default 1
 
             Returns
             -------
