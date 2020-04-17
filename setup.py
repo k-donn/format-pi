@@ -22,8 +22,10 @@ setup(
     ],
     keywords=[
         "matplotlib",
-        "pi",
-        "formatting"
+        "formatter",
+        "locator",
+        "axes ticks",
+        "pi"
     ],
     packages=["matplot_fmt_pi"],
     install_requires=["numpy", "matplotlib"]
