@@ -1,3 +1,4 @@
+"""Install the module."""
 import pathlib
 from setuptools import setup
 
