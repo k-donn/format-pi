@@ -1,5 +1,7 @@
 # Matplotlib Format Pi
 
+![Upload Python Package](https://github.com/k-donn/format-pi/workflows/Upload%20Python%20Package/badge.svg?branch=master&event=push)
+
 Create locator and formatter instances for multiples of pi on the axes of a matplotlib graph.
 
 The `MultiplePi` class provides methods to seamlessly tell matplotlib to format tick labels as multiples of pi.
@@ -11,6 +13,7 @@ Multiples of π/2, 3, 4, ... can be represented if needed.
 ## Examples
 
 Simply, the instance can be asssigned a denominator of pi then passed to matplotlib.
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -36,6 +39,7 @@ plt.show()
 ```
 
 The parameters can also be modified to adjust the output to something more sophisticated.
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
