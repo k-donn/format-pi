@@ -1,9 +1,0 @@
-README.md
-setup.py
-matplot_fmt_pi/__init__.py
-matplot_fmt_pi/multiple.py
-matplot_fmt_pi.egg-info/PKG-INFO
-matplot_fmt_pi.egg-info/SOURCES.txt
-matplot_fmt_pi.egg-info/dependency_links.txt
-matplot_fmt_pi.egg-info/requires.txt
-matplot_fmt_pi.egg-info/top_level.txt

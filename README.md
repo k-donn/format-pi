@@ -13,6 +13,7 @@ Multiples of π/2, 3, 4, ... can be represented if needed.
 ## Examples
 
 Simply, the instance can be asssigned a denominator of pi then passed to matplotlib.
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -38,6 +39,7 @@ plt.show()
 ```
 
 The parameters can also be modified to adjust the output to something more sophisticated.
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
