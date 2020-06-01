@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="matplot-fmt-pi",
-    version="1.4.0",
+    version="1.5.0",
     description="Format numbers as multiples of Pi",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -26,7 +26,11 @@ setup(
         "formatter",
         "locator",
         "axes ticks",
-        "pi"
+        "numbers",
+        "radians"
+        "multiples",
+        "of",
+        "pi",
     ],
     packages=["matplot_fmt_pi"],
     install_requires=["numpy", "matplotlib"]
