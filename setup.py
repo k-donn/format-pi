@@ -27,9 +27,10 @@ setup(
         "locator",
         "axes ticks",
         "numbers",
+        "radians"
         "multiples",
         "of",
-        "pi"
+        "pi",
     ],
     packages=["matplot_fmt_pi"],
     install_requires=["numpy", "matplotlib"]
