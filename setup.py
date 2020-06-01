@@ -26,8 +26,11 @@ setup(
         "formatter",
         "locator",
         "axes ticks",
+        "numbers",
+        "multiples",
+        "of",
         "pi"
     ],
-    packages=["matplot_fmt_pi"],
+    packages=["source/matplot_fmt_pi"],
     install_requires=["numpy", "matplotlib"]
 )

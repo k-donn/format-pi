@@ -1,8 +1,9 @@
 # Matplotlib Format Pi
 
-![Upload Python Package](https://github.com/k-donn/format-pi/workflows/Upload%20Python%20Package/badge.svg?branch=master&event=push)
+[![Upload Python Package](https://github.com/k-donn/format-pi/workflows/Upload%20Python%20Package/badge.svg?branch=master&event=push)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Upload+Python+Package%22)
+[![Downloads](https://pepy.tech/badge/matplot-fmt-pi/month)](https://pepy.tech/project/matplot-fmt-pi/month)
 
-Create locator and formatter instances for multiples of pi on the axes of a matplotlib graph.
+Create locator and formatter instances for numbers that are multiples of pi on the axes of a matplotlib graph.
 
 The `MultiplePi` class provides methods to seamlessly tell matplotlib to format tick labels as multiples of pi.
 
@@ -67,6 +68,10 @@ axes.xaxis.set_minor_locator(minor_pi_manager.locator())
 plt.tight_layout()
 plt.show()
 ```
+
+## Todo
+
+1.  Raise error for improper usage (plugging in 1/4 for a multiple of 1/3)
 
 ## Meta
 
