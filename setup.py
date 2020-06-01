@@ -31,6 +31,6 @@ setup(
         "of",
         "pi"
     ],
-    packages=["source/matplot_fmt_pi"],
+    packages=["matplot_fmt_pi"],
     install_requires=["numpy", "matplotlib"]
 )
