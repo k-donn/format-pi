@@ -17,3 +17,4 @@ from .multiple import MultiplePi
 
 __version__ = "1.4.0"
 __name__ = "Matplotlib Format Pi"
+__pie__ = "Tastes good"
