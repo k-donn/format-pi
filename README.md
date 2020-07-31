@@ -49,9 +49,8 @@ PYTHONPATH=/home/user/py-pros/format-pi python examples/pi_graph.py
 
 ## Todo
 
--   [x] Raise error for inputting non-multiples
--   [x] Raise error for instantiation of `MultiplePi` with non-Natural Number denominator
--   [ ] Update unit-testing
+-   [x] Update unit-testing
+-   [ ] Add type stubs
 
 ## Meta
 
