@@ -30,6 +30,15 @@ class TestRawValue(unittest.TestCase):
         self.assertEqual(manager2.base, tau)
         self.assertEqual(manager2.symbol, symbol)
 
+        with self.assertRaises(ValueError):
+            multiple.MultiplePi(denominator=-1)
+
+        with self.assertRaises(ValueError):
+            multiple.MultiplePi(denominator=0)
+
+        with self.assertRaises(TypeError):
+            multiple.MultiplePi(denominator=1.5)
+
     def test_create_function(self):
         """Test creation of format function."""
         manager = multiple.MultiplePi(denominator=1)
@@ -55,8 +64,10 @@ class TestRawValue(unittest.TestCase):
         self.assertEqual(fmt(-math.pi * 24), r"$-24\pi$")
 
         # correct behaviour when improperly used
-        self.assertEqual(fmt(math.pi * 1.5), r"$2\pi$")
-        self.assertEqual(fmt(-math.pi * 1.5), r"$-2\pi$")
+        with self.assertRaises(ValueError):
+            # Should be multiples of one
+            fmt(math.pi * 1.5)
+            fmt(-math.pi * 1.5)
 
     def test_whole_denom(self):
         """Test values where the denominator is a whole number."""
@@ -89,8 +100,9 @@ class TestRawValue(unittest.TestCase):
         self.assertEqual(fmt3(-4 * math.pi / 3), r"$\frac{-4\pi}{3}$")
 
         # correct behaviour when improperly used
-        self.assertEqual(fmt3(math.pi / 4), r"$\frac{\pi}{3}$")
-        self.assertEqual(fmt3(-math.pi / 4), r"$\frac{-\pi}{3}$")
+        with self.assertRaises(ValueError):
+            fmt3(math.pi / 4)
+            fmt3(-math.pi / 4)
 
     def test_tau(self):
         """Test using MultiplePi for multiples of fractions of tau."""
@@ -110,6 +122,11 @@ class TestRawValue(unittest.TestCase):
 
         self.assertEqual(fmt(4 * tau / 30), r"$\frac{2\tau}{15}$")
         self.assertEqual(fmt(-4 * tau / 30), r"$\frac{-2\tau}{15}$")
+
+        # correct behaviour when improperly used
+        with self.assertRaises(ValueError):
+            fmt(tau / 45)
+            fmt(-tau / 45)
 
 
 if __name__ == "__main__":
