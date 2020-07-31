@@ -52,6 +52,13 @@ class MultiplePi:
     def __init__(self, denominator: int, base: float = math.pi,
                  symbol: str = r"\pi"):
         """Initialize self."""
+        if denominator == 0 or denominator < 0:
+            raise ValueError(
+                "denominator must not be less than or equal to 0")
+        if denominator % 1 != 0:
+            raise TypeError(
+                "denominator must be non-negative integer (natural number)")
+
         self.denominator = denominator
         self.base = base
         self.symbol = symbol
@@ -91,14 +98,26 @@ class MultiplePi:
             ----------
             theta : `float`
                 The angle in radians to be transformed
+
             _pos : `int`, optional
                 Index of the tick on the axis, by default 1
+
+            Raises
+            ------
+            `ValueError`
+                If method is called with an angle that is not a multiple of `base/denominator`
+                Happens when Axes ticks are not located at multiples of `base/denominator`
 
             Returns
             -------
             `str`
                 The final label to be shown on the axis
             """
+            if theta % (self.base / self.denominator) != 0:
+                raise ValueError(
+                    f"{theta:.3f} is not multiple of {self.base / self.denominator:.3f}. "
+                    "Did you not use the .locator method?")
+
             denom = self.denominator
             # Find raw numerator by finding how many (denom)s are in (theta)
             # eg. How many pi/4 are in 1.5pi? (6)

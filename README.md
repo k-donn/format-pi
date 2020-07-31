@@ -1,30 +1,57 @@
 # Matplotlib Format Pi
 
-[![Upload Python Package](https://github.com/k-donn/format-pi/workflows/Upload%20Python%20Package/badge.svg?branch=master&event=push)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Upload+Python+Package%22)
-[![Downloads](https://pepy.tech/badge/matplot-fmt-pi/month)](https://pepy.tech/project/matplot-fmt-pi/month)
-[![PyPI version](https://badge.fury.io/py/matplot-fmt-pi.svg)](https://badge.fury.io/py/matplot-fmt-pi)
+| Version                                                                                                 | Upload Status                                                                                                                                                                                                                    | Downloads                                                                                                    |
+| :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| [![PyPi version](https://badge.fury.io/py/matplot-fmt-pi.svg)](https://badge.fury.io/py/matplot-fmt-pi) | [![Upload Python Package](https://github.com/k-donn/format-pi/workflows/Upload%20Python%20Package/badge.svg?branch=master&event=push)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Upload+Python+Package%22) | [![Downloads](https://pepy.tech/badge/matplot-fmt-pi/month)](https://pepy.tech/project/matplot-fmt-pi/month) |
 
-Create locator and formatter instances to make x/y labels and ticks correspond to multiples of pi.
+[![Test Upload Python Package](https://github.com/k-donn/format-pi/workflows/Test%20Upload%20Python%20Package/badge.svg?branch=release)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Test+Upload+Python+Package%22)
 
-The `MultiplePi` class provides methods to seamlessly tell matplotlib to create and format tick labels as multiples of pi.
+Format multiples of pi as strings on Matplotlib axes.
 
-In addition, the `MultiplePi` class allows a user to change the denominator of pi.
+The `MultiplePi` class creates a [Locator](https://matplotlib.org/api/ticker_api.html?highlight=locator#matplotlib.ticker.MultipleLocator) to place ticks at desired multiples and a [Formatter](https://matplotlib.org/api/ticker_api.html?highlight=locator#matplotlib.ticker.FuncFormatter) to format all tick labels.
 
-Multiples of π/{2, 3, 4, ...} can be represented if needed.
+The base (π or τ) can be divided by any Natural Number.
+
+Multiples of one-π or one-τ can be placed/formatted too. (2π, 3π, 2τ, 3τ, etc.)
+
+## Installing
+
+```bash
+pip install matplot-fmt-pi
+```
 
 ## Examples
 
 Simply, the instance can be asssigned a denominator of pi then passed to matplotlib.
 
-![Graph Example](./examples/graph.png)
+![Graph Example](https://raw.githubusercontent.com/k-donn/format-pi/master/examples/pi_graph.png)
 
 The parameters can also be modified to adjust the output to something more sophisticated.
 
-![Tau Graph Example](./examples/tau_graph.png)
+![Tau Graph Example](https://raw.githubusercontent.com/k-donn/format-pi/master/examples/tau_graph.png)
+
+![Y-Axis Example](https://raw.githubusercontent.com/k-donn/format-pi/master/examples/pi_y_axis.png)
+
+## Running Examples
+
+[Install](#Installing) then from the repo,
+
+```bash
+cd examples/
+python *.py
+```
+
+Put the repo's directory in the python path to import the `matplot_fmt_pi` folder not the installed package.
+
+```bash
+PYTHONPATH=/home/user/py-pros/format-pi python examples/pi_graph.py
+```
 
 ## Todo
 
-1.  Raise error for improper usage (plugging in 1/4 for a multiple of 1/3)
+-   [x] Raise error for inputting non-multiples
+-   [x] Raise error for instantiation of `MultiplePi` with non-Natural Number denominator
+-   [ ] Update unit-testing
 
 ## Meta
 
