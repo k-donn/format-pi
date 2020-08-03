@@ -10,7 +10,7 @@ y = np.arctan(x)
 fig = plt.figure()
 ax = fig.add_subplot(111)
 
-ax.set_title("MultiplePi formatting")
+ax.set_title("MultiplePi y-axis formatting")
 ax.plot(x, y, 'b.')
 
 y_pi = y / np.pi

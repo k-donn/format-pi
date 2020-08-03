@@ -1,2 +1,5 @@
 .DS_STORE
-__pycache__
+
+.vscode/
+.mypy_cache/
+__pycache__/

@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="matplot-fmt-pi",
-    version="1.5.0",
+    version="1.6.3",
     description="Format numbers as multiples of Pi",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -18,7 +18,12 @@ setup(
     author_email="k-donn@github.com",
     license="MIT",
     classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Framework :: Matplotlib",
+        "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8"
     ],
     keywords=[
@@ -27,7 +32,7 @@ setup(
         "locator",
         "axes ticks",
         "numbers",
-        "radians"
+        "radians",
         "multiples",
         "of",
         "pi",

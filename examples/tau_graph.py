@@ -13,7 +13,7 @@ axes.plot(x, np.exp(-x) * np.cos(60 * x))
 axes.grid(True)
 axes.axhline(0, color='black', lw=2)
 axes.axvline(0, color='black', lw=2)
-axes.set_title("MultiplePi formatting")
+axes.set_title("MultiplePi tau formatting")
 
 major_pi_manager = MultiplePi(60, base=tau, symbol=r"\tau")
 minor_pi_manager = MultiplePi(240, base=tau, symbol=r"\tau")
