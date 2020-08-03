@@ -10,8 +10,8 @@ class MultiplePi:
     r"""
     Handle formatting of numbers as multiples of pi.
 
-    An instance can be constructed, then, the methods can be called and passed to
-    the matplotlib formatting and locating methods.
+    An instance can be constructed, then, the methods can be called and
+    passed to the matplotlib formatting and locating methods.
 
     Attributes
     ----------
@@ -36,15 +36,17 @@ class MultiplePi:
     Example
     -------
     >>> pi_controller = MultiplePi(3) # For pi/3 and multiples of
-    >>> axes_instance.set_major_formatter(pi_controller.formatter()) # Turn values into the fraction
-    >>> axes_instance.set_major_locator(pi_controller.locator()) # Will put ticks at multiples of pi/3
+    >>> # Will put ticks at multiples of pi/3
+    >>> axes_instance.set_major_locator(pi_controller.locator())
+    >>> # Turn values into the fraction
+    >>> axes_instance.set_major_formatter(pi_controller.formatter())
 
     Notes
     -----
-    The symbol is rendered inside a latex equation by matplotlib. Non-latex characters
-    can also be used.
+    The symbol is rendered inside a latex equation by matplotlib.
+    Non-latex characters can also be used.
 
-    Set symbol to a different value when base is a different value. (tau possibly)
+    Set symbol to a different value when base is a different value. (ie. tau)
 
 
     """
@@ -63,6 +65,8 @@ class MultiplePi:
         self.base = base
         self.symbol = symbol
 
+        self.original_num = self.base / self.denominator
+
     def locator(self) -> MultipleLocator:
         """Return the locator with ticks at multiples of base via denominator.
 
@@ -71,7 +75,7 @@ class MultiplePi:
         `MultipleLocator`
             The object used to space the ticks
         """
-        return MultipleLocator(self.base / self.denominator)
+        return MultipleLocator(self.original_num)
 
     def formatter(self) -> FuncFormatter:
         """Return the formatter for multiple ticks.
@@ -105,23 +109,25 @@ class MultiplePi:
             Raises
             ------
             `ValueError`
-                If method is called with an angle that is not a multiple of `base/denominator`
-                Happens when Axes ticks are not located at multiples of `base/denominator`
+                If method is called with an angle that is not
+                a multiple of `base/denominator`
+                Happens when Axes ticks are not
+                located at multiples of `base/denominator`
 
             Returns
             -------
             `str`
                 The final label to be shown on the axis
             """
-            if theta % (self.base / self.denominator) != 0:
+            if theta % self.original_num != 0:
                 raise ValueError(
-                    f"{theta:.3f} is not multiple of {self.base / self.denominator:.3f}. "
+                    f"{theta:.3f} is not multiple of {self.original_num:.3f}. "
                     "Did you not use the .locator method?")
 
             denom = self.denominator
-            # Find raw numerator by finding how many (denom)s are in (theta)
-            # eg. How many pi/4 are in 1.5pi? (6)
-            numer = np.int(np.rint(denom * theta / self.base))
+            # How many pi/4 are in 1.5pi?
+            # Divide off pi then multiply by denom. (1.5 * 4 = 6)
+            numer = int(np.rint(denom * theta / self.base))
 
             # Simplify the raw (numer) to lowest eg. 6/4 to 3/2
             com = self._gcd(numer, denom)

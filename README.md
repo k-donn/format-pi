@@ -49,7 +49,6 @@ PYTHONPATH=/home/user/py-pros/format-pi python examples/pi_graph.py
 
 ## Todo
 
--   [x] Update unit-testing
 -   [ ] Add type stubs
 
 ## Meta
