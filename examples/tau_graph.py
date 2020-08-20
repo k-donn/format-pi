@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from matplot_fmt_pi import MultiplePi
+from matplot_fmt_pi.ticker import MultiplePi
 
 fig = plt.figure()
 axes = fig.add_subplot(111)

@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from matplot_fmt_pi import MultiplePi
+from matplot_fmt_pi.ticker import MultiplePi
 
 x = np.arange(-10.0, 10.0, 0.1)
 y = np.arctan(x)

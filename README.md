@@ -30,6 +30,10 @@ pip install matplot-fmt-pi
 
 ## Examples
 
+```python
+from matplot_fmt_pi.ticker
+```
+
 Simply, the instance can be asssigned a denominator of pi then passed to matplotlib.
 
 ![Graph Example](https://raw.githubusercontent.com/k-donn/format-pi/master/examples/pi_graph.png)

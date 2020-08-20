@@ -1,4 +1,15 @@
-"""The multiple module defines the MultiplePi class."""
+"""
+Create, locate, and format ticks on Matplotlib plots.
+
+Usage
+-----
+If knowing where multiples of pi are on a plot is useful to the viewer,
+then the viewer should be able to see what the base is and what the
+multipliers are.
+
+:class:`MultiplePi`
+    Create FuncFormatter and Locator instances for Matplotlib
+"""
 import math
 from typing import Any, Callable
 
