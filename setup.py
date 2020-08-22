@@ -37,6 +37,12 @@ setup(
         "of",
         "pi",
     ],
+    zip_safe=False,
+    package_data={
+        "matplot_fmt_pi": [
+            "py.typed",
+            "ticker.pyi",
+            "__init__.pyi"]},
     packages=["matplot_fmt_pi"],
     install_requires=["numpy", "matplotlib"]
 )
