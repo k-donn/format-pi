@@ -3,7 +3,7 @@
 import math
 import unittest
 
-from matplot_fmt_pi import multiple
+from matplot_fmt_pi import ticker
 from matplotlib.ticker import FuncFormatter, MultipleLocator
 
 
@@ -13,9 +13,9 @@ class TestRawValue(unittest.TestCase):
     def test_create_class(self):
         """Test instantiation of MultiplePi objects."""
         denom = 1
-        manager = multiple.MultiplePi(denominator=denom)
+        manager = ticker.MultiplePi(denominator=denom)
 
-        self.assertIsInstance(manager, multiple.MultiplePi)
+        self.assertIsInstance(manager, ticker.MultiplePi)
         self.assertEqual(manager.denominator, denom)
         self.assertEqual(manager.base, math.pi)
         self.assertEqual(manager.symbol, r"\pi")
@@ -24,7 +24,7 @@ class TestRawValue(unittest.TestCase):
         denom2 = 60
         base = tau
         symbol = r"\tau"
-        manager2 = multiple.MultiplePi(
+        manager2 = ticker.MultiplePi(
             denominator=denom2, base=base, symbol=symbol)
 
         self.assertEqual(manager2.denominator, denom2)
@@ -32,17 +32,17 @@ class TestRawValue(unittest.TestCase):
         self.assertEqual(manager2.symbol, symbol)
 
         with self.assertRaises(ValueError):
-            multiple.MultiplePi(denominator=-1)
+            ticker.MultiplePi(denominator=-1)
 
         with self.assertRaises(ValueError):
-            multiple.MultiplePi(denominator=0)
+            ticker.MultiplePi(denominator=0)
 
         with self.assertRaises(TypeError):
-            multiple.MultiplePi(denominator=1.5)
+            ticker.MultiplePi(denominator=1.5)
 
     def test_create_function(self):
         """Test creation of format function."""
-        manager = multiple.MultiplePi(denominator=1)
+        manager = ticker.MultiplePi(denominator=1)
 
         fmt = manager._make_formatter()
 
@@ -50,19 +50,19 @@ class TestRawValue(unittest.TestCase):
 
     def test_create_locator(self):
         """Test returned locator from .locator()."""
-        manager = multiple.MultiplePi(denominator=1)
+        manager = ticker.MultiplePi(denominator=1)
 
         self.assertIsInstance(manager.locator(), MultipleLocator)
 
     def test_create_formatter(self):
         """Test returned formatter from .formatter()."""
-        manager = multiple.MultiplePi(denominator=1)
+        manager = ticker.MultiplePi(denominator=1)
 
         self.assertIsInstance(manager.formatter(), FuncFormatter)
 
     def test_fmt_one_denom(self):
         """Test values where the denominator of pi is one."""
-        manager = multiple.MultiplePi(denominator=1)
+        manager = ticker.MultiplePi(denominator=1)
 
         fmt = manager.formatter()
 
@@ -89,7 +89,7 @@ class TestRawValue(unittest.TestCase):
     def test_fmt_whole_denom(self):
         """Test values where the denominator is a whole number."""
         # pi/2, pi, 3pi/2, ...
-        manager2 = multiple.MultiplePi(denominator=2)
+        manager2 = ticker.MultiplePi(denominator=2)
 
         fmt2 = manager2.formatter()
 
@@ -101,7 +101,7 @@ class TestRawValue(unittest.TestCase):
         self.assertEqual(fmt2(-2.5 * math.pi),
                          r"$\frac{-5\pi}{2}$")
 
-        manager3 = multiple.MultiplePi(denominator=3)
+        manager3 = ticker.MultiplePi(denominator=3)
 
         fmt3 = manager3.formatter()
 
@@ -131,7 +131,7 @@ class TestRawValue(unittest.TestCase):
         tau = math.pi * 2
         base = tau
         symbol = r"\tau"
-        manager = multiple.MultiplePi(
+        manager = ticker.MultiplePi(
             denominator=60, base=base, symbol=symbol)
 
         fmt = manager.formatter()
