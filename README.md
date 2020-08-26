@@ -31,7 +31,7 @@ pip install matplot-fmt-pi
 ## Examples
 
 ```python
-from matplot_fmt_pi.ticker
+from matplot_fmt_pi.ticker import MultiplePi
 ```
 
 Simply, the instance can be asssigned a denominator of pi then passed to matplotlib.
@@ -62,7 +62,6 @@ PYTHONPATH=/home/user/py-pros/format-pi python examples/pi_graph.py
 ## Todo
 
 -   [ ] Add testing option once installed (Like `numpy.test()`)
--   [ ] Add type stubs
 
 ## Meta
 
