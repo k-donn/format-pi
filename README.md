@@ -1,10 +1,18 @@
 # Matplotlib Format Pi
 
-| Version                                                                                                 | Upload Status                                                                                                                                                                                                                    | Downloads                                                                                                    |
-| :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| [![PyPi version](https://badge.fury.io/py/matplot-fmt-pi.svg)](https://badge.fury.io/py/matplot-fmt-pi) | [![Upload Python Package](https://github.com/k-donn/format-pi/workflows/Upload%20Python%20Package/badge.svg?branch=master&event=push)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Upload+Python+Package%22) | [![Downloads](https://pepy.tech/badge/matplot-fmt-pi/month)](https://pepy.tech/project/matplot-fmt-pi/month) |
+## Branches
 
-[![Test Upload Python Package](https://github.com/k-donn/format-pi/workflows/Test%20Upload%20Python%20Package/badge.svg?branch=release)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Test+Upload+Python+Package%22)
+### Master
+
+| Version                                                                                                               | Upload Status                                                                                                                                                                                                                                              | Downloads                                                                                                                      |
+| :-------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
+| [![PyPI](https://img.shields.io/pypi/v/matplot-fmt-pi?label=PyPi%20package)](https://badge.fury.io/py/matplot-fmt-pi) | [![Upload Python Package](https://img.shields.io/github/workflow/status/k-donn/format-pi/Upload%20Python%20Package?label=Upload%20Python%20Package&logo=github)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Upload+Python+Package%22) | [![PyPI - Downloads](https://img.shields.io/pypi/dm/matplot-fmt-pi?logo=pypi)](https://pepy.tech/project/matplot-fmt-pi/month) |
+
+### Release
+
+| Version                                                                                            | Upload Status                                                                                                                                                                                                                                                                 | Size                                                                                             |
+| :------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------- |
+| ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/k-donn/format-pi?label=Release) | [![Upload Python Package](https://img.shields.io/github/workflow/status/k-donn/format-pi/Test%20Upload%20Python%20Package?label=Test%20Upload%20Python%20Package&logo=github)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Test+Upload+Python+Package%22) | ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/k-donn/format-pi) |
 
 Format multiples of pi as strings on Matplotlib axes.
 
@@ -22,6 +30,10 @@ pip install matplot-fmt-pi
 
 ## Examples
 
+```python
+from matplot_fmt_pi.ticker import MultiplePi
+```
+
 Simply, the instance can be asssigned a denominator of pi then passed to matplotlib.
 
 ![Graph Example](https://raw.githubusercontent.com/k-donn/format-pi/master/examples/pi_graph.png)
@@ -34,7 +46,7 @@ The parameters can also be modified to adjust the output to something more sophi
 
 ## Running Examples
 
-[Install](#Installing) then from the repo,
+Clone, then from the repo,
 
 ```bash
 cd examples/
@@ -49,8 +61,10 @@ PYTHONPATH=/home/user/py-pros/format-pi python examples/pi_graph.py
 
 ## Todo
 
--   [ ] Add type stubs
+-   [ ] Add testing option once installed (Like `numpy.test()`)
 
 ## Meta
+
+![PyPI - License](https://img.shields.io/pypi/l/matplot-fmt-pi)
 
 Inspired by [this](https://stackoverflow.com/questions/40642061/how-to-set-axis-ticks-in-multiples-of-pi-python-matplotlib) post on StackOverflow.

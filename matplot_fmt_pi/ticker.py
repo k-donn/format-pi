@@ -1,4 +1,15 @@
-"""The multiple module defines the MultiplePi class."""
+"""
+Create, locate, and format ticks on Matplotlib plots.
+
+Usage
+-----
+If knowing where multiples of pi are on a plot is useful to the viewer,
+then the viewer should be able to see what the base is and what the
+multipliers are.
+
+:class:`MultiplePi`
+    Create FuncFormatter and Locator instances for Matplotlib
+"""
 import math
 from typing import Any, Callable
 
@@ -106,28 +117,38 @@ class MultiplePi:
             _pos : `int`, optional
                 Index of the tick on the axis, by default 1
 
-            Raises
-            ------
-            `ValueError`
-                If method is called with an angle that is not
-                a multiple of `base/denominator`
-                Happens when Axes ticks are not
-                located at multiples of `base/denominator`
+            Notes
+            -----
+            If method is called with an angle that is not
+            a multiple of `base/denominator`
+            Happens when Axes ticks are not
+            located at multiples of `base/denominator`
 
             Returns
             -------
             `str`
                 The final label to be shown on the axis
             """
-            if theta % self.original_num != 0:
-                raise ValueError(
-                    f"{theta:.3f} is not multiple of {self.original_num:.3f}. "
-                    "Did you not use the .locator method?")
-
             denom = self.denominator
+
             # How many pi/4 are in 1.5pi?
             # Divide off pi then multiply by denom. (1.5 * 4 = 6)
-            numer = int(np.rint(denom * theta / self.base))
+            numer = denom * theta / self.base
+
+            numer_int = int(np.rint(numer))
+            diff = numer_int - numer
+
+            # If numer is not an int, then theta is not
+            # a multiple of base / denom
+            # Sometimes, rounding error occurs
+            # in numer calculation (eg 7.9999999999 vs 8.0)
+            if diff > 0.000000001:
+                print(
+                    f"{theta} is not multiple of {self.original_num}. "
+                    "Did you not use the .locator method? "
+                    "Tick values may not be placed at proper intervals")
+            else:
+                numer = numer_int
 
             # Simplify the raw (numer) to lowest eg. 6/4 to 3/2
             com = self._gcd(numer, denom)

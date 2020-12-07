@@ -3,7 +3,7 @@ import math
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplot_fmt_pi import MultiplePi
+from matplot_fmt_pi.ticker import MultiplePi
 from matplotlib.ticker import MultipleLocator
 
 fig = plt.figure(figsize=(4 * np.pi, 2.4))

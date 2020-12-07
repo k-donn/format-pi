@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="matplot-fmt-pi",
-    version="1.6.3",
+    version="2.0.0",
     description="Format numbers as multiples of Pi",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -37,6 +37,12 @@ setup(
         "of",
         "pi",
     ],
+    zip_safe=False,
+    package_data={
+        "matplot_fmt_pi": [
+            "py.typed",
+            "ticker.pyi",
+            "__init__.pyi"]},
     packages=["matplot_fmt_pi"],
     install_requires=["numpy", "matplotlib"]
 )
