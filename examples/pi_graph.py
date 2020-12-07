@@ -4,9 +4,9 @@ import numpy as np
 
 from matplot_fmt_pi.ticker import MultiplePi
 
-fig = plt.figure(figsize=(4*np.pi, 2.4))
+fig = plt.figure(figsize=(4 * np.pi, 2.4))
 axes = fig.add_subplot(111)
-x = np.linspace(-2*np.pi, 2*np.pi, 512)
+x = np.linspace(-2 * np.pi, 2 * np.pi, 512)
 axes.plot(x, np.sin(x))
 
 axes.grid(True)
