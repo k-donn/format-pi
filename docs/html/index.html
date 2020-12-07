@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Matplot Format Pi’s documentation! &#8212; Matplot Format Pi  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-matplot-format-pi-s-documentation">
+<h1>Welcome to Matplot Format Pi’s documentation!<a class="headerlink" href="#welcome-to-matplot-format-pi-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-matplot_fmt_pi"></span><p>Help with showing multiples of pi on Matplotlib plots.</p>
+<p>Classes available format numbers as exact multiples of pi on plots
+instead of showing them as decimals.</p>
+<p>The class MultiplePi contains the math and formatting to accomplish this.
+MultiplePi has methods to return a Locator and FuncFormatter for use on a plot.
+Ticks are placed at exact multiples and the exact multiples are shown on the
+plot.</p>
+<dl class="simple">
+<dt>Modules include:</dt><dd><dl class="simple">
+<dt><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplot_fmt_pi.ticker</span></code></dt><dd><p>Contains MultiplePi class</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Matplotlib has a basic_units.py module that can do this, however,
+it can only do format multiples of pi/2.
+In addition, it forces use of its own cos, sin, etc.
+while this is far more extensible.</p>
+</div>
+<dl class="py class">
+<dt id="ticker.MultiplePi">
+<em class="property">class </em><code class="sig-prename descclassname">ticker.</code><code class="sig-name descname">MultiplePi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">denominator</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">base</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">3.141592653589793</span></em>, <em class="sig-param"><span class="n">symbol</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'\\pi'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ticker.MultiplePi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle formatting of numbers as multiples of pi.</p>
+<p>An instance can be constructed, then, the methods can be called and
+passed to the matplotlib formatting and locating methods.</p>
+<dl class="py attribute">
+<dt id="ticker.MultiplePi.denominator">
+<code class="sig-name descname">denominator</code><a class="headerlink" href="#ticker.MultiplePi.denominator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The denominator of the multiples desired.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>int</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="ticker.MultiplePi.base">
+<code class="sig-name descname">base</code><a class="headerlink" href="#ticker.MultiplePi.base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number to find multiples of, by default math.pi</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>float</cite>, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="ticker.MultiplePi.symbol">
+<code class="sig-name descname">symbol</code><a class="headerlink" href="#ticker.MultiplePi.symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Symbol to place in string of multiple, by default r”pi”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>str</cite>, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ticker.MultiplePi.locator">
+<code class="sig-name descname">locator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ticker.MultiplePi.locator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the locator instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ticker.MultiplePi.formatter">
+<code class="sig-name descname">formatter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ticker.MultiplePi.formatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the formatter instance</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pi_controller</span> <span class="o">=</span> <span class="n">MultiplePi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># For pi/3 and multiples of</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Will put ticks at multiples of pi/3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axes_instance</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">pi_controller</span><span class="o">.</span><span class="n">locator</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Turn values into the fraction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axes_instance</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">pi_controller</span><span class="o">.</span><span class="n">formatter</span><span class="p">())</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>The symbol is rendered inside a latex equation by matplotlib.
+Non-latex characters can also be used.</p>
+<p>Set symbol to a different value when base is a different value. (ie. tau)</p>
+<dl class="py method">
+<dt id="id0">
+<code class="sig-name descname">formatter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; matplotlib.ticker.FuncFormatter<a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the formatter for multiple ticks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Used to insert the symbol into the multiples</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>FuncFormatter</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id1">
+<code class="sig-name descname">locator</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; matplotlib.ticker.MultipleLocator<a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the locator with ticks at multiples of base via denominator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The object used to space the ticks</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>MultipleLocator</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Matplot Format Pi</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, k-donn.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
