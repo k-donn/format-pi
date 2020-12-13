@@ -12,6 +12,12 @@ Welcome to MatplotFormatPi's documentation!
 
    includeme
 
+.. automodule:: matplot_fmt_pi
+   :members:
+
+.. autoclass:: matplot_fmt_pi.ticker.MultiplePi
+   :members:
+
 
 
 Indices and tables
