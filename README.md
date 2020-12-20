@@ -1,5 +1,7 @@
 # Matplotlib Format Pi
 
+[docs](https://k-donn.github.io/format-pi)
+
 ## Branches
 
 ### Master
@@ -62,6 +64,7 @@ PYTHONPATH=/home/user/py-pros/format-pi python examples/pi_graph.py
 ## Todo
 
 -   [ ] Add testing option once installed (Like `numpy.test()`)
+-   [ ] Windows `make.bat`?
 
 ## Meta
 

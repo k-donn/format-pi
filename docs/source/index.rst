@@ -10,7 +10,11 @@ Welcome to MatplotFormatPi's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   includeme
+.. automodule:: matplot_fmt_pi
+   :members:
+
+.. autoclass:: matplot_fmt_pi.ticker.MultiplePi
+   :members:
 
 
 

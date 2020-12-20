@@ -1,8 +1,6 @@
 """
 Create, locate, and format ticks on Matplotlib plots.
 
-Usage
------
 If knowing where multiples of pi are on a plot is useful to the viewer,
 then the viewer should be able to see what the base is and what the
 multipliers are.
@@ -52,8 +50,8 @@ class MultiplePi:
     >>> # Turn values into the fraction
     >>> axes_instance.set_major_formatter(pi_controller.formatter())
 
-    Notes
-    -----
+    Note
+    ----
     The symbol is rendered inside a latex equation by matplotlib.
     Non-latex characters can also be used.
 
@@ -117,10 +115,10 @@ class MultiplePi:
             _pos : `int`, optional
                 Index of the tick on the axis, by default 1
 
-            Notes
-            -----
+            Note
+            ----
             If method is called with an angle that is not
-            a multiple of `base/denominator`
+            a multiple of `base/denominator`, warning printed
             Happens when Axes ticks are not
             located at multiples of `base/denominator`
 
