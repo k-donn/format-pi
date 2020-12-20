@@ -1,6 +1,6 @@
 # Matplotlib Format Pi
 
-[docs](https://k-donn.github.io/format-pi)
+## [DOCS](https://k-donn.github.io/format-pi)
 
 ## Branches
 
@@ -12,9 +12,9 @@
 
 ### Release
 
-| Version                                                                                            | Upload Status                                                                                                                                                                                                                                                                 | Size                                                                                             |
-| :------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------- |
-| ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/k-donn/format-pi?label=Release) | [![Upload Python Package](https://img.shields.io/github/workflow/status/k-donn/format-pi/Test%20Upload%20Python%20Package?label=Test%20Upload%20Python%20Package&logo=github)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Test+Upload+Python+Package%22) | ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/k-donn/format-pi) |
+| Version                                                                                                                                                | Upload Status                                                                                                                                                                                                                                                                 | Size                                                                                             |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------- |
+| [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/k-donn/format-pi?label=Release)](https://github.com/k-donn/format-pi/tree/release) | [![Upload Python Package](https://img.shields.io/github/workflow/status/k-donn/format-pi/Test%20Upload%20Python%20Package?label=Test%20Upload%20Python%20Package&logo=github)](https://github.com/k-donn/format-pi/actions?query=workflow%3A%22Test+Upload+Python+Package%22) | ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/k-donn/format-pi) |
 
 Format multiples of pi as strings on Matplotlib axes.
 
