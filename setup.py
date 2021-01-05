@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="matplot-fmt-pi",
-    version="2.0.2",
+    version="2.0.4",
     description="Format numbers as multiples of Pi",
     long_description=README,
     long_description_content_type="text/markdown",
