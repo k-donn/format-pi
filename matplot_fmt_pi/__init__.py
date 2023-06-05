@@ -22,6 +22,6 @@ In addition, it forces use of its own cos, sin, etc.
 while this is far more extensible.
 """
 
-__version__ = "2.0.4"
+__version__ = "2.1.0"
 __name__ = "matplot_fmt_pi"
 __pie__ = "Tastes good"
